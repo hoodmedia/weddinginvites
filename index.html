@@ -1,1 +1,629 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+<title>Wedding Invitation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --burgundy:#6D1F32;
+    --deepgreen:#1E3A34;
+    --white:#F8F5F2;
+    --gold:#D4AF37;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--white);
+    color:#222;
+    overflow-x:hidden;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{
+    width:8px;
+}
+::-webkit-scrollbar-thumb{
+    background:var(--burgundy);
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.5)),
+    url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1920&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    animation:zoomHero 18s infinite alternate;
+}
+
+@keyframes zoomHero{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.1);
+    }
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    width:90%;
+}
+
+.subtitle{
+    letter-spacing:4px;
+    margin-bottom:20px;
+    font-size:14px;
+}
+
+.hero h1{
+    font-size:90px;
+    font-family:'Cormorant Garamond',serif;
+    font-weight:700;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+.open-btn{
+    margin-top:40px;
+    padding:15px 40px;
+    border:none;
+    background:var(--burgundy);
+    color:white;
+    font-size:15px;
+    border-radius:40px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.open-btn:hover{
+    background:var(--deepgreen);
+    transform:translateY(-3px);
+}
+
+/* SECTION */
+
+section{
+    padding:120px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:60px;
+    color:var(--burgundy);
+}
+
+.section-title p{
+    margin-top:10px;
+    color:#666;
+}
+
+/* STORY */
+
+.story{
+    background:var(--white);
+}
+
+.timeline{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.story-card{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.story-card:hover{
+    transform:translateY(-10px);
+}
+
+.story-card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.story-content{
+    padding:25px;
+}
+
+.story-content h3{
+    color:var(--deepgreen);
+    margin-bottom:10px;
+}
+
+/* EVENT */
+
+.event{
+    background:var(--deepgreen);
+    color:white;
+}
+
+.event .section-title h2{
+    color:white;
+}
+
+.event-wrapper{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.event-card{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(10px);
+    padding:40px;
+    border-radius:30px;
+}
+
+.event-card h3{
+    margin-bottom:15px;
+    font-size:30px;
+    font-family:'Cormorant Garamond',serif;
+}
+
+.countdown{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.time-box{
+    width:120px;
+    height:120px;
+    background:var(--burgundy);
+    border-radius:25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.time-box h4{
+    font-size:38px;
+}
+
+/* GALLERY */
+
+.gallery-grid{
+    columns:3 250px;
+    gap:20px;
+}
+
+.gallery-grid img{
+    width:100%;
+    margin-bottom:20px;
+    border-radius:25px;
+    transition:.4s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.03);
+}
+
+/* RSVP */
+
+.rsvp{
+    background:linear-gradient(135deg,var(--burgundy),var(--deepgreen));
+    color:white;
+}
+
+.rsvp .section-title h2{
+    color:white;
+}
+
+.form-box{
+    max-width:700px;
+    margin:auto;
+    background:rgba(255,255,255,.08);
+    padding:50px;
+    border-radius:30px;
+    backdrop-filter:blur(12px);
+}
+
+input, textarea{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:15px;
+    margin-bottom:20px;
+    font-family:'Poppins';
+}
+
+textarea{
+    height:150px;
+    resize:none;
+}
+
+.submit-btn{
+    width:100%;
+    padding:18px;
+    background:white;
+    color:var(--burgundy);
+    border:none;
+    border-radius:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    background:var(--gold);
+    color:white;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:80px 10%;
+}
+
+footer h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+/* MUSIC BUTTON */
+
+.music-btn{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:var(--burgundy);
+    color:white;
+    border:none;
+    font-size:22px;
+    cursor:pointer;
+    z-index:999;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:55px;
+}
+
+.section-title h2{
+    font-size:45px;
+}
+
+section{
+    padding:90px 7%;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="subtitle">
+THE WEDDING OF
+</div>
+
+<h1>Ricky & Alya</h1>
+
+<p>12 Desember 2026</p>
+
+<button class="open-btn" onclick="scrollToSection()">
+Buka Undangan
+</button>
+
+</div>
+
+</section>
+
+<!-- STORY -->
+
+<section class="story" id="story">
+
+<div class="section-title">
+<h2>Our Story</h2>
+<p>Perjalanan cinta kami</p>
+</div>
+
+<div class="timeline">
+
+<div class="story-card">
+<img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop">
+<div class="story-content">
+<h3>Pertama Bertemu</h3>
+<p>
+Tidak ada yang kebetulan di dunia ini.
+Semua sudah tersusun sangat rapi.
+</p>
+</div>
+</div>
+
+<div class="story-card">
+<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop">
+<div class="story-content">
+<h3>Menjalin Hubungan</h3>
+<p>
+Kami tumbuh bersama dalam cerita yang penuh tawa dan harapan.
+</p>
+</div>
+</div>
+
+<div class="story-card">
+<img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1200&auto=format&fit=crop">
+<div class="story-content">
+<h3>Hari Bahagia</h3>
+<p>
+Dan akhirnya kami memutuskan untuk melangkah ke jenjang yang lebih serius.
+</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- EVENT -->
+
+<section class="event">
+
+<div class="section-title">
+<h2>Wedding Event</h2>
+<p>Save the date</p>
+</div>
+
+<div class="event-wrapper">
+
+<div class="event-card">
+<h3>Akad Nikah</h3>
+<p>
+Sabtu, 12 Desember 2026
+</p>
+
+<br>
+
+<p>
+09.00 WIB
+</p>
+
+<br>
+
+<p>
+Grand Ballroom Hotel
+</p>
+
+</div>
+
+<div class="event-card">
+<h3>Resepsi</h3>
+
+<p>
+Sabtu, 12 Desember 2026
+</p>
+
+<br>
+
+<p>
+19.00 WIB
+</p>
+
+<br>
+
+<p>
+Grand Ballroom Hotel
+</p>
+
+</div>
+
+</div>
+
+<div class="countdown">
+
+<div class="time-box">
+<h4 id="days">00</h4>
+<span>Hari</span>
+</div>
+
+<div class="time-box">
+<h4 id="hours">00</h4>
+<span>Jam</span>
+</div>
+
+<div class="time-box">
+<h4 id="minutes">00</h4>
+<span>Menit</span>
+</div>
+
+<div class="time-box">
+<h4 id="seconds">00</h4>
+<span>Detik</span>
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section>
+
+<div class="section-title">
+<h2>Gallery</h2>
+<p>Momen indah kami</p>
+</div>
+
+<div class="gallery-grid">
+
+<img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</section>
+
+<!-- RSVP -->
+
+<section class="rsvp">
+
+<div class="section-title">
+<h2>RSVP</h2>
+<p>Berikan ucapan terbaik untuk kami</p>
+</div>
+
+<div class="form-box">
+
+<input type="text" placeholder="Nama Anda">
+
+<textarea placeholder="Tulis ucapan..."></textarea>
+
+<button class="submit-btn">
+Kirim Ucapan
+</button>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>Thank You</h2>
+
+<p>
+Merupakan suatu kehormatan bagi kami apabila Anda hadir dan memberikan doa restu.
+</p>
+
+</footer>
+
+<!-- MUSIC -->
+
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mp3">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">
+♫
+</button>
+
+<script>
+
+/* OPEN */
+
+function scrollToSection(){
+    document.getElementById('story').scrollIntoView({
+        behavior:'smooth'
+    });
+
+    document.getElementById('music').play();
+}
+
+/* MUSIC */
+
+let music = document.getElementById('music');
+
+function toggleMusic(){
+
+    if(music.paused){
+        music.play();
+    }else{
+        music.pause();
+    }
+
+}
+
+/* COUNTDOWN */
+
+const targetDate = new Date("Dec 12, 2026 09:00:00").getTime();
+
+const countdown = setInterval(() => {
+
+const now = new Date().getTime();
+
+const distance = targetDate - now;
+
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
+document.getElementById("seconds").innerHTML = seconds;
+
+},1000);
+
+</script>
+
+</body>
+</html>
