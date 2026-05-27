@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Wedding Invitation</title>
+<title>Ricky & Puput Wedding</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -24,10 +24,15 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:'Poppins',sans-serif;
     background:var(--white);
     color:#222;
+    overflow-x:hidden;
 }
 
 /* HERO */
@@ -52,20 +57,20 @@ body{
 }
 
 .hero h1{
-    font-size:85px;
+    font-size:95px;
     font-family:'Cormorant Garamond',serif;
 }
 
 .hero p{
-    margin-top:10px;
     letter-spacing:3px;
+    margin-top:10px;
 }
 
 .open-btn{
     margin-top:35px;
-    padding:16px 40px;
+    padding:16px 45px;
     border:none;
-    border-radius:40px;
+    border-radius:50px;
     background:var(--burgundy);
     color:white;
     font-size:16px;
@@ -75,7 +80,7 @@ body{
 
 .open-btn:hover{
     background:var(--green);
-    transform:translateY(-3px);
+    transform:translateY(-4px);
 }
 
 @keyframes fadeIn{
@@ -89,62 +94,183 @@ body{
     }
 }
 
-/* SECTION */
+/* GENERAL */
 
 section{
-    padding:100px 10%;
+    padding:110px 10%;
 }
 
 .title{
     text-align:center;
-    margin-bottom:60px;
+    margin-bottom:70px;
 }
 
 .title h2{
-    font-size:55px;
-    font-family:'Cormorant Garamond',serif;
+    font-size:60px;
     color:var(--burgundy);
+    font-family:'Cormorant Garamond',serif;
 }
 
 .title p{
+    margin-top:12px;
     color:#777;
-    margin-top:10px;
 }
 
-/* EVENT */
+/* STORY */
 
-.event{
+.story{
+    background:white;
+}
+
+.story-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:40px;
+}
+
+.story-box{
+    background:#fff;
+    padding:40px;
+    border-radius:30px;
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+}
+
+.story-box h3{
+    font-size:36px;
+    margin-bottom:20px;
+    color:var(--burgundy);
+    font-family:'Cormorant Garamond',serif;
+}
+
+.story-box p{
+    line-height:1.9;
+    color:#555;
+}
+
+/* TIMELINE */
+
+.timeline{
     background:var(--green);
     color:white;
 }
 
-.event .title h2{
+.timeline .title h2{
     color:white;
 }
 
-.event-box{
+.timeline-wrap{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:30px;
 }
 
-.card{
+.timeline-card{
     background:rgba(255,255,255,.08);
-    padding:40px;
+    padding:35px;
     border-radius:25px;
     backdrop-filter:blur(10px);
 }
 
-.card h3{
-    font-size:35px;
+.timeline-card h3{
+    font-size:32px;
     margin-bottom:15px;
     font-family:'Cormorant Garamond',serif;
+}
+
+/* GALLERY */
+
+.gallery{
+    background:#faf7f4;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:25px;
+    transition:.4s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.03);
+}
+
+/* VIDEO */
+
+.video{
+    background:linear-gradient(135deg,var(--burgundy),var(--green));
+    color:white;
+}
+
+.video .title h2{
+    color:white;
+}
+
+.video-box{
+    max-width:950px;
+    margin:auto;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 10px 40px rgba(0,0,0,.3);
+}
+
+.video-box iframe{
+    width:100%;
+    height:530px;
+    border:none;
+}
+
+/* ALBUM */
+
+.album{
+    background:white;
+}
+
+.album-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.album-card{
+    background:#fff;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.album-card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.album-content{
+    padding:30px;
+}
+
+.album-content h3{
+    font-size:32px;
+    margin-bottom:10px;
+    color:var(--burgundy);
+    font-family:'Cormorant Garamond',serif;
+}
+
+.album-content p{
+    color:#666;
+    line-height:1.8;
 }
 
 /* RSVP */
 
 .rsvp{
-    background:linear-gradient(135deg,var(--burgundy),var(--green));
+    background:#111;
     color:white;
 }
 
@@ -153,12 +279,11 @@ section{
 }
 
 .form-box{
-    max-width:750px;
+    max-width:760px;
     margin:auto;
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.06);
     padding:45px;
     border-radius:30px;
-    backdrop-filter:blur(10px);
 }
 
 input,
@@ -166,16 +291,16 @@ textarea,
 select{
     width:100%;
     padding:18px;
+    margin-bottom:20px;
     border:none;
     border-radius:15px;
-    margin-bottom:20px;
-    font-family:'Poppins';
     font-size:15px;
+    font-family:'Poppins';
 }
 
 textarea{
+    height:150px;
     resize:none;
-    height:140px;
 }
 
 button{
@@ -183,22 +308,19 @@ button{
     padding:18px;
     border:none;
     border-radius:15px;
-    background:white;
-    color:var(--burgundy);
+    background:var(--gold);
+    color:white;
     font-weight:600;
     cursor:pointer;
     transition:.3s;
 }
 
 button:hover{
-    background:var(--gold);
-    color:white;
+    opacity:.9;
 }
 
-/* UCAPAN LIST */
-
 .message-list{
-    margin-top:50px;
+    margin-top:40px;
     display:grid;
     gap:20px;
 }
@@ -218,8 +340,8 @@ button:hover{
 .status{
     display:inline-block;
     margin-top:12px;
-    padding:6px 15px;
-    border-radius:30px;
+    padding:7px 16px;
+    border-radius:40px;
     font-size:13px;
     color:white;
 }
@@ -235,16 +357,22 @@ button:hover{
 /* FOOTER */
 
 footer{
-    background:#111;
+    background:#000;
     color:white;
     text-align:center;
-    padding:70px 20px;
+    padding:80px 20px;
 }
 
 footer h2{
-    font-size:55px;
-    font-family:'Cormorant Garamond',serif;
+    font-size:65px;
     margin-bottom:15px;
+    font-family:'Cormorant Garamond',serif;
+}
+
+footer p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.9;
 }
 
 /* MOBILE */
@@ -252,15 +380,19 @@ footer h2{
 @media(max-width:768px){
 
 .hero h1{
-    font-size:55px;
+    font-size:58px;
 }
 
 .title h2{
     font-size:42px;
 }
 
+.video-box iframe{
+    height:260px;
+}
+
 section{
-    padding:80px 7%;
+    padding:90px 7%;
 }
 
 }
@@ -279,46 +411,194 @@ section{
 
 <h1>Ricky & Puput</h1>
 
-<p>11 Oktober 2026</p>
+<p>11 OCTOBER 2026</p>
 
 <button class="open-btn" onclick="scrollRSVP()">
-Buka Undangan
+Open Invitation
 </button>
 
 </div>
 
 </section>
 
-<!-- EVENT -->
+<!-- STORY -->
 
-<section class="event">
+<section class="story">
 
 <div class="title">
-<h2>Wedding Event</h2>
-<p>Save The Date</p>
+<h2>Our Story</h2>
+<p>A little story about our journey</p>
 </div>
 
-<div class="event-box">
+<div class="story-container">
 
-<div class="card">
-<h3>Akad Nikah</h3>
+<div class="story-box">
+<h3>Beginning</h3>
+<p>
+Two souls met unexpectedly, turning ordinary moments into meaningful memories.
+From simple conversations to endless laughter, love slowly found its place between us.
+</p>
+</div>
 
-<p>Minggu, 11 Oktober 2026</p>
-<br>
-<p>09.00 WIB</p>
-<br>
-<p>Grand Ballroom Hotel</p>
+<div class="story-box">
+<h3>Journey</h3>
+<p>
+Every chapter brought us closer together. Through happiness, challenges,
+distance, and dreams, we learned that true love grows stronger with time and sincerity.
+</p>
+</div>
+
+<div class="story-box">
+<h3>Forever</h3>
+<p>
+Now, we are ready to begin a new chapter together.
+A journey not only about love, but about building a home filled with trust, warmth, and endless prayers.
+</p>
+</div>
 
 </div>
 
-<div class="card">
-<h3>Resepsi</h3>
+</section>
 
-<p>Minggu, 11 Oktober 2026</p>
-<br>
-<p>19.00 WIB</p>
-<br>
-<p>Grand Ballroom Hotel</p>
+<!-- PHILOSOPHY -->
+
+<section class="timeline">
+
+<div class="title">
+<h2>Love Philosophy</h2>
+<p>What love means to us</p>
+</div>
+
+<div class="timeline-wrap">
+
+<div class="timeline-card">
+<h3>Trust</h3>
+<p>
+Love grows beautifully when built with honesty and trust.
+</p>
+</div>
+
+<div class="timeline-card">
+<h3>Patience</h3>
+<p>
+Every relationship has its season, and patience keeps hearts together.
+</p>
+</div>
+
+<div class="timeline-card">
+<h3>Commitment</h3>
+<p>
+Love is not only about feelings, but choosing each other every single day.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery">
+
+<div class="title">
+<h2>Gallery</h2>
+<p>Captured moments of our happiness</p>
+</div>
+
+<div class="gallery-grid">
+
+<img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</section>
+
+<!-- VIDEO -->
+
+<section class="video">
+
+<div class="title">
+<h2>Wedding Footage</h2>
+<p>Watch our prewedding moments</p>
+</div>
+
+<div class="video-box">
+
+<iframe 
+src="https://www.youtube.com/embed/ScMzIvxBSi4"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</section>
+
+<!-- ALBUM -->
+
+<section class="album">
+
+<div class="title">
+<h2>Memories Album</h2>
+<p>Every picture tells a story</p>
+</div>
+
+<div class="album-container">
+
+<div class="album-card">
+
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop">
+
+<div class="album-content">
+
+<h3>First Meet</h3>
+
+<p>
+The first meeting that unexpectedly changed our lives forever.
+</p>
+
+</div>
+
+</div>
+
+<div class="album-card">
+
+<img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop">
+
+<div class="album-content">
+
+<h3>Engagement</h3>
+
+<p>
+A beautiful promise to continue life together with love and faith.
+</p>
+
+</div>
+
+</div>
+
+<div class="album-card">
+
+<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop">
+
+<div class="album-content">
+
+<h3>Future Dreams</h3>
+
+<p>
+Building dreams together and walking toward forever side by side.
+</p>
+
+</div>
 
 </div>
 
@@ -331,29 +611,27 @@ Buka Undangan
 <section class="rsvp" id="rsvp">
 
 <div class="title">
-<h2>RSVP & Ucapan</h2>
-<p>Berikan doa terbaik untuk kami</p>
+<h2>RSVP & Wishes</h2>
+<p>Send your blessings and prayers</p>
 </div>
 
 <div class="form-box">
 
-<input type="text" id="name" placeholder="Nama Anda">
+<input type="text" id="name" placeholder="Your Name">
 
 <select id="attendance">
-<option value="">Konfirmasi Kehadiran</option>
-<option value="Hadir">Saya Akan Hadir</option>
-<option value="Tidak Hadir">Maaf Tidak Bisa Hadir</option>
+<option value="">Attendance Confirmation</option>
+<option value="Hadir">I Will Attend</option>
+<option value="Tidak Hadir">Sorry, Can't Attend</option>
 </select>
 
-<textarea id="message" placeholder="Tulis ucapan..."></textarea>
+<textarea id="message" placeholder="Write your wishes..."></textarea>
 
 <button onclick="addMessage()">
-Kirim Ucapan
+Send Wishes
 </button>
 
-<div class="message-list" id="messageList">
-
-</div>
+<div class="message-list" id="messageList"></div>
 
 </div>
 
@@ -366,7 +644,8 @@ Kirim Ucapan
 <h2>Thank You</h2>
 
 <p>
-Merupakan suatu kehormatan bagi kami apabila Anda hadir dan memberikan doa restu.
+It would be a great honor and happiness for us if you could attend
+and give us your blessings on our special day.
 </p>
 
 </footer>
@@ -393,9 +672,9 @@ function addMessage(){
 
     if(name === '' || attendance === '' || message === ''){
 
-        alert('Lengkapi semua data');
-
+        alert('Please complete all fields');
         return;
+
     }
 
     const messageList = document.getElementById('messageList');
@@ -404,7 +683,9 @@ function addMessage(){
 
     div.classList.add('message-card');
 
-    let statusClass = attendance === 'Hadir' ? 'hadir' : 'tidak';
+    let statusClass = attendance === 'Hadir'
+    ? 'hadir'
+    : 'tidak';
 
     div.innerHTML = `
     
